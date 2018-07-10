@@ -128,23 +128,14 @@ autoDismissWithDelay:(double)arg2
 %end
 
 %ctor {
-
-//Will Continue adding this later
-
-
-
-
-
-
-
-
-
-   
-      
-      
-      
-      
-      
-      
-      
-    
+  CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalsce);
+      initPrefs();
+      if (kCDCoreFoundationVerisonNumber >= kCFCoreFoundationVersionNumber_iOS_9_0) {
+          NSLog(@"CoreFoundation %f detected, appears to be iOS 9 or higher.", kCFCoreFoundationVersionNumber);
+              %init(iOS9Hook);
+          } else {
+              NSLog(@"CoreFoundation %f detected, appears to be iOS 7/8", kCFCoreFoundationVersionNumber);
+              %init(iOS78Hook);
+          }
+          %init();
+}
