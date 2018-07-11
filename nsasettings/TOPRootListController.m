@@ -65,5 +65,5 @@ CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter()
   
   -(void) github:(id)arg1 {
 	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/singhofmarco/NoSlowAnimations"]];
-      
+  }
 @end
