@@ -122,7 +122,7 @@ autoDismissWithDelay:(double)arg2
   }
   else
   {
-      %orig9arg1, arg2);
+      %orig(arg1, arg2);
   }
 }
 
