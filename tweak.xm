@@ -13,6 +13,7 @@
 //
 //What needs to be done:
 //Sped up app-opening animations, sped up unlock animations.
+//Ungrouping of backwards compatible groups.
 //
 //original author of NoSlowAnimations is Marco Singhof
 //
