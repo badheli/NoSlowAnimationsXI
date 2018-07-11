@@ -62,4 +62,8 @@ CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter()
 -(void) sendEmailTo:(id)arg1 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:patrickknauf17@gmail.com"]];
 }
+  
+  -(void) github:(id)arg1 {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/singhofmarco/NoSlowAnimations"]];
+      
 @end
