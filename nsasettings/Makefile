@@ -3,7 +3,7 @@ ARCHS = arm64
 include $(THEOS)/makefiles/common.mk
 
 BUNDLE_NAME = nsasettings
-nsasettings_FILES = TOPRootListController.m
+nsasettings_FILES = nsasettingsListController.m
 nsasettings_INSTALL_PATH = /Library/PreferenceBundles
 nsasettings_FRAMEWORKS = UIKit
 nsasetting_PRIVATE_FRAMEWORKS = Preferences
