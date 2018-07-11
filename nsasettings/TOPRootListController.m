@@ -29,7 +29,7 @@
     if(_specifiers == nil) {
         _specifiers = [[self loadSpecifiersFromPlistname:@"nsaforkbeta" target:self] retain];
         }
-        return_specifiers;
+        return _specifiers;
         
   }
   
