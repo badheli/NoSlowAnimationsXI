@@ -63,7 +63,7 @@ CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter()
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com/patrickk1734"]];
 }
 
--(void) sendEmailTo:(id)arg1 {
+-(void) sendEmail:(id)arg1 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"mailto:patrickknauf17@gmail.com"]];
 }
   
