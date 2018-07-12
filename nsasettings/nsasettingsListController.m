@@ -46,7 +46,7 @@
     
 }
 
--(void setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
+-(void) setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
     NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
     [defaults setObject:value forKey:specifier.properties[@"key"]];
     [defaults writeToFile:NSAPreferencePath atomically:YES];
