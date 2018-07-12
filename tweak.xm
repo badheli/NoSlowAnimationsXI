@@ -39,7 +39,7 @@ static void initPrefs() {
    }
    
    
-%hook SBFAnimationFactorySettings
+%hook SBAnimationFactorySettings
 
 -(BOOL) slowAnimations {
 
