@@ -24,9 +24,6 @@
 NSLog((@"nsaforkbeta: %s:%d " LogContents), _FUNCTION_, _LINE_, ##_VA_ARGS_)
 #define NSAPreferencePath @"/var/mobile/Library/Preferences/com.pknauf.nsasettings.plist"
 
-#ifndef kCFCoreFoundationVersionNumber_iOS_9_0
-#define kCFCoreFoundationVersionNumber_iOS_9_0 1240.10
-#endif
 
 const double minimumHudSpeed = 0.15;
 
@@ -41,7 +38,7 @@ static void initPrefs() {
    Slider = ([nsasettings objectForKey:@"Slider"] ? [[nsasettings objectForKey:@"Slider"] floatValue] : Slider);
    }
    
-%group iOS9Hook
+   
 %hook SBAnimationFactorySettings
 
 -(BOOL) slowAnimations {
@@ -57,9 +54,7 @@ return SCisEnabled;
     }
 }
 %end
-%end
 
-%group iOS 9Hook
 %hook SBAnimationFactorySettings
 -(BOOL) slowAnimations {
     return SCisEnabled;
@@ -75,7 +70,6 @@ if (SCisEnabled) {
     }
 }
 
-%end
 %end
 
 %hook SBWakeAnimationSettings
@@ -131,12 +125,4 @@ autoDismissWithDelay:(double)arg2
 %ctor {
   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalsce);
       initPrefs();
-      if (kCDCoreFoundationVerisonNumber >= kCFCoreFoundationVersionNumber_iOS_9_0) {
-          NSLog(@"CoreFoundation %f detected, appears to be iOS 9 or higher.", kCFCoreFoundationVersionNumber);
-              %init(iOS9Hook);
-          } else {
-              NSLog(@"CoreFoundation %f detected, appears to be iOS 7/8", kCFCoreFoundationVersionNumber);
-              %init(iOS78Hook);
-          }
-          %init();
 }
