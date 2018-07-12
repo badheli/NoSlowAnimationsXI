@@ -53,22 +53,6 @@ return SCisEnabled;
     return %orig();
     }
 }
-%end
-
-%hook SBAnimationFactorySettings
--(BOOL) slowAnimations {
-    return SCisEnabled;
-}
-
--(double) slowDownFactor {
-
-if (SCisEnabled) {
-    return Slider;
-    
-} else {
-    return %orig():
-    }
-}
 
 %end
 
