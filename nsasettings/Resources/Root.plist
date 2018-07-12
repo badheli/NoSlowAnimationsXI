@@ -55,13 +55,6 @@
 			<string>respring:</string>
 			<key>label</key>
 			<string>Respring</string>
-			<key>pl_filter</key>
-			<dict>
-				<key>CoreFoundationVersion</key>
-				<array>
-					<string>1240.10</string>
-				</array>
-			</dict>
 		</dict>
     <dict>
       <key>cell</key>
