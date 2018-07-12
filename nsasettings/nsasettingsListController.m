@@ -54,6 +54,10 @@
     
 CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), NSAPost, NULL NULL, YES);
 }
+  
+  -(void) respring:(id)arg1 {
+    [(Springboard *)[UIApplication sharedApplication] _relaunchSpringBoardNow];
+}
 
 -(void) twitter:(id)arg1 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com/patrickk1734"]];
