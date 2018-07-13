@@ -56,7 +56,7 @@ CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter()
 }
   
   -(void) respring:(id)arg1 {
-    [(Springboard *)[UIApplication sharedApplication] _relaunchSpringBoardNow];
+           system ("killall -9 backboardd");
 }
 
 -(void) twitter:(id)arg1 {
