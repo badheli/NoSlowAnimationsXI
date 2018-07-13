@@ -14,7 +14,7 @@
 #import <Preferences/PSSliderTableCell.h>
 #import <Preferences/PSSwitchTableCell.h>
 #import <Preferences/PSSystemPolicyForApp.h>
-#import <Preferences/PSTableCell.h>
+#import <Preferences/PSTableCell.h> 
 
 
 #define NSAPreferencePath @"/var/mobile/Library/Preferences/com.pknauf.nsasettings.plist"
