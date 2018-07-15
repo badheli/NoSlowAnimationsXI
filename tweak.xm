@@ -38,28 +38,6 @@ static void initPrefs() {
    Slider = ([nsasettings objectForKey:@"Slider"] ? [[nsasettings objectForKey:@"Slider"] floatValue] : Slider);
    }
    
-%hook SBLockScreenViewControllerBase
-
--(void) viewDidLoad{
-    if //My DRM{
-    
-    %orig;
-    }else{
-    
-    
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error: Pirate repo detected"
-                                                                   message:@"Please install NoSlowAnimationsXI for free from Patrick Knauf's repo."
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"Add Repo" style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://patrick-knauf.yourepo.com"]];}];
-    [alert addAction:defaultAction];
-    //[self presentViewController:alert animated:YES completion:nil];
-    NSLog(@"alert: %@", alert);
-
-}
-    
-%end
-   
    
 %hook SBAnimationFactorySettings
 
