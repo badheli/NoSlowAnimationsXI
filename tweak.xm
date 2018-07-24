@@ -9,11 +9,7 @@
 //Preference Bundle PATH has changed, and some other improvements have been made to the preference bundle.
 //
 //What's currently working:
-//Sped up 3D touch, reachability, control center animations, notification Banners
-//
-//What needs to be done:
-//Sped up app-opening animations, sped up unlock animations.
-//Ungrouping of backwards compatible groups.
+//Sped up 3D touch, reachability, control center animations, notification Banners. App opening/closing, unlock/lock
 //
 //original author of NoSlowAnimations is Marco Singhof
 //
