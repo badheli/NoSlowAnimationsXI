@@ -106,6 +106,21 @@ autoDismissWithDelay:(double)arg2
 
 %end
 
+%hook SBFluidBehaviorSettings
+
+-(void) setResponse:(double)arg1 {
+
+    if (SCisEnabled) {
+
+        %orig(arg1 * Slider);
+
+    }else{
+
+        return %orig
+
+    }
+}
+
 %ctor {
   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalsce);
       initPrefs();
