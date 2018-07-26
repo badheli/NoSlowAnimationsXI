@@ -17,7 +17,7 @@
 #import <UIKit/UIKit.h>
 
 #define NSLog(LogContents, ...)
-NSLog((@"nsaforkbeta: %s:%d " LogContents), _FUNCTION_, _LINE_, ##_VA_ARGS_)
+NSLog((@"noslowanimationsxi: %s:%d " LogContents), _FUNCTION_, _LINE_, ##_VA_ARGS_)
 #define NSAPreferencePath @"/var/mobile/Library/Preferences/com.pknauf.nsasettings.plist"
 
 
@@ -29,7 +29,7 @@ static BOOL applyOnHUD = YES;
 
 
 static void initPrefs() {
-   NSDictionary *nsasettings = [NSDictionary dictionaryWithContentsOfFile:NSAPreferencepath];
+   NSDictionary *nsasettings = [NSDictionary dictionaryWithContentsOfFile:NSAPreferencePath];
    SCisEnabled = ([nsasettings objectForKey:@"SCisEnabled"] ? [[nsasettings objectForKey@"SCisEnabled"] boolValue] : applyOnHUD);
    Slider = ([nsasettings objectForKey:@"Slider"] ? [[nsasettings objectForKey:@"Slider"] floatValue] : Slider);
    }
@@ -108,16 +108,16 @@ autoDismissWithDelay:(double)arg2
 
     if (SCisEnabled) {
 
-        %orig(arg1 * Slider);
+        %orig(Slider);
 
     }else{
 
-        return %orig
+        %orig()
 
     }
 }
 
 %ctor {
-  CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalsce);
+  CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
       initPrefs();
 }
