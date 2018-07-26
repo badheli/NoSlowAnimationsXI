@@ -1,5 +1,5 @@
 Package: com.pknauf.nsa
-Name: nsaforkbeta
+Name: noslowanimationsxi
 Depends: mobilesubstrate
 Version: 0.0.1
 Architecture: iphoneos-arm
