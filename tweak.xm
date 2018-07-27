@@ -119,6 +119,25 @@ autoDismissWithDelay:(double)arg2
 
 %end
 
+%hook SBAppSwitcherOrbGestureAnimationSettings
+
+-(void)setResponse {
+
+    if (SCisEnabled) {
+
+        %orig(Slider);
+
+    }else{
+
+        %orig();
+
+    }
+
+}
+
+%end
+
+
 %ctor {
   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
       initPrefs();
