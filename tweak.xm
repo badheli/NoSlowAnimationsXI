@@ -4,12 +4,9 @@
 //
 //I AM NOT THE ORIGINAL CREATOR OF NO SLOW ANIMATIONS, I HAVE FORKED IT TO WORK WITH iOS 11
 //
-//So far:
-//All methods have changed, some classes have changed
-//Preference Bundle PATH has changed, and some other improvements have been made to the preference bundle.
-//
-//What's currently working:
-//Sped up 3D touch, reachability, control center animations, notification Banners. App opening/closing, unlock/lock
+//Features:
+//Sped up animations:
+//App opening/closing, lock/unlock, app switcher, control center, notification banners, 3D touch
 //
 //original author of NoSlowAnimations is Marco Singhof
 //
