@@ -121,15 +121,10 @@ autoDismissWithDelay:(double)arg2
 -(void)setResponse {
 
     if (SCisEnabled) {
-
         %orig(Slider);
-
     }else{
-
         %orig();
-
     }
-
 }
 
 %end
