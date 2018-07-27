@@ -52,7 +52,7 @@
     [defaults writeToFile:NSAPreferencePath atomically:YES];
     CFStringref NSAPost =(CFStringRef)specifier.properties[@"PostNoticiation"];
     
-CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), NSAPost, NULL NULL, YES);
+CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), NSAPost, NULL, NULL, YES);
 }
   
   -(void) respring:(id)arg1 {
