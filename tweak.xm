@@ -81,7 +81,6 @@ autoDismissWithDelay:(double)arg2
 {
    if(SCisEnabled && applyOnHUD)
    {
-      //workaround to set the minimum speed of HUDs
       if(Slider < minimumHudSpeed)
       {
           %orig(arg1, arg2 * minimumHudSpeed);
