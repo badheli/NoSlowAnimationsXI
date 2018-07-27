@@ -5,7 +5,7 @@
 #import <Preferences/PSSpecifier.h>
 #import <Preferences/PreferencesAppController.h>
 #import <Preferences/PSBundleController.h>
-#import <Preferences/PSControltableCell.h>
+#import <Preferences/PSControlTableCell.h>
 #import <Preferences/PSDiscreteSlider.h>
 #import <Preferences/PSEditableTableCell.h>
 #import <Preferences/PSHeaderFooterView.h>
