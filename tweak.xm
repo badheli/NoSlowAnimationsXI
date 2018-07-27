@@ -117,6 +117,8 @@ autoDismissWithDelay:(double)arg2
     }
 }
 
+%end
+
 %ctor {
   CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
       initPrefs();
