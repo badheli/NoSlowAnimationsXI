@@ -1,4 +1,4 @@
-//NoSlowAnimationsXI (iOS 11.0-11.4 beta 2.1)
+//NoSlowAnimationsXI Beta 4.1
 //
 //Created by Patrick Knauf on 7/9/18
 //
