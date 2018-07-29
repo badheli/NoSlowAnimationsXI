@@ -28,7 +28,7 @@ static BOOL applyOnHUD = YES;
 static void initPrefs() {
    NSDictionary *nsasettings = [NSDictionary dictionaryWithContentsOfFile:NSAPreferencePath];
    SCisEnabled = ([nsasettings objectForKey:@"SCisEnabled"] ? [[nsasettings objectForKey:@"SCisEnabled"] boolValue] : SCisEnabled);
-   applyOnHUD = ([nsasettings objectForKey:@"applyOnHUD"] ? [[nsasettings objectForKey:@"SCisEnabled"] boolValue] : SCisEnabled);
+   applyOnHUD = ([nsasettings objectForKey:@"applyOnHUD"] ? [[nsasettings objectForKey:@"applyOnHUD"] boolValue] : applyOnHUD);
    Slider = ([nsasettings objectForKey:@"Slider"] ? [[nsasettings objectForKey:@"Slider"] floatValue] : Slider);
    }
    
