@@ -13,115 +13,92 @@
 
 #import <UIKit/UIKit.h>
 
-#define NSLog(LogContents, ...)
-NSLog((@"noslowanimationsxi: %s:%d " LogContents), _FUNCTION_, _LINE_, ##_VA_ARGS_)
-#define NSAPreferencePath @"/var/mobile/Library/Preferences/com.pknauf.nsasettings.plist"
+NSDictionary *bundle = [[NSUserDefaults standardUserDefaults] persistentDomainForName:@"com.pknauf.nsasettings"];
 
+id SCisEnabled = [bundle valueForKey:@"SCisEnabled"];
+id applyOnHUD = [bundle valueForKey:@"applyOnHUD"];
+id Slider = [bundle valueForKey@"Slider"];
+double SliderFloat = [Slider floatValue];
 
 const double minimumHudSpeed = 0.15;
 
-static BOOL SCisEnabled = YES;
-static CGFloat Slider = 0.5;
-static BOOL applyOnHUD = YES;
 
+%hook SBAnimationFactorySetings {
+    if ([SCisEnabled isEqual:@1]) {
 
-static void initPrefs() {
-   NSDictionary *nsasettings = [NSDictionary dictionaryWithContentsOfFile:NSAPreferencePath];
-   SCisEnabled = ([nsasettings objectForKey:@"SCisEnabled"] ? [[nsasettings objectForKey:@"SCisEnabled"] boolValue] : SCisEnabled);
-   applyOnHUD = ([nsasettings objectForKey:@"applyOnHUD"] ? [[nsasettings objectForKey:@"applyOnHUD"] boolValue] : applyOnHUD);
-   Slider = ([nsasettings objectForKey:@"Slider"] ? [[nsasettings objectForKey:@"Slider"] floatValue] : Slider);
-   }
-   
-   
-%hook SBAnimationFactorySettings
-
--(BOOL) slowAnimations {
-
-return SCisEnabled;
+        return NO;
+    }else{
+        return %orig;
+    }
 }
 
--(double) slowDownFactor{
-    if (SCisEnabled) {
-    return Slider;
-    } else {
-    return %orig();
+-(double)slowDownFactor {
+    if ([SCisEnabled isEqual:@"1"]) {
+        return SliderFloat;
+    }else{
+        return %orig();
+    }
+}
+
+%end 
+
+
+%hook SBScreenWakeAnimationController
+-(void)backlightFadeDuration:(double)arg1 {
+    if ([SCisEnabled isEqual:@1]) {
+        if (SliderFloat <= 0.30) {
+            %orig(0.1)
+        }
+        else if (SliderFloat <= 0.10) {
+            %orig(0.0);
+        }else{
+            %orig(0.2);
+        }
+        
+    }else{
+        %orig();
+    }
+}     
+
+%end
+
+%hook SBHudController
+
+-(void)presentHUDView:(id)arg1 autoDismissWithDelay:(double)arg2 {
+    if ([SCisEnabled isEqual:@1]) {
+        if ([applyOnHUD isEqual:@"1"]) {
+            if(SliderFloat < minimumHudSpeed) {
+                %orig(arg1, arg2 * minimumHudSpeed);
+            }else{
+                %orig(arg1, arg2 *SliderFloat);
+            }
+        }else{
+            %orig(arg1, arg2);
+        }
     }
 }
 
 %end
 
-%hook SBWakeAnimationSettings
-
--(double) backlightfadeDuration {
-   if (SCisEnabled) {
-       if (Slider <= 0.30)
-       {
-           return 0.1;
-       }
-       
-      else if (Slider <=0.10)
-      {
-          return 0.0;
-      }
-      else
-      {
-          return 0.2;
-      }
-  }
-  else
-  {
-      return %orig();
-  }
-}
-%end
-
-%hook SBHUDController
-
--(void)presentHUDView:(id)arg1
-autoDismissWithDelay:(double)arg2
-{
-   if(SCisEnabled && applyOnHUD)
-   {
-      if(Slider < minimumHudSpeed)
-      {
-          %orig(arg1, arg2 * minimumHudSpeed);
-      }
-      else
-      {
-          %orig(arg1, arg2 * Slider);
-      }
-  }
-  else
-  {
-      %orig(arg1, arg2);
-  }
-}
-
-%end
 
 %hook SBFluidBehaviorSettings
 
--(void) setResponse:(double)arg1 {
-
-    if (SCisEnabled) {
-
-        %orig(Slider);
-
+-(void)setResponse:(double)arg1 {
+    if ([SCisEnabled isEqual:@1]) {
+        %orig(SliderFloat);
     }else{
-
-        %orig()
-
+        return %orig;
     }
 }
 
 %end
 
-%hook SBAppSwitcherOrbGestureAnimationSettings
 
--(void)setResponse {
+%hook SBappSwitcherorbGestureAnimationSettings
 
-    if (SCisEnabled) {
-        %orig(Slider);
+-(void)setResponse:(double)arg1 {
+    if ([SCisEnabled isEqual:@1]) {
+        %orig(SliderFloat);
     }else{
         %orig();
     }
@@ -129,8 +106,5 @@ autoDismissWithDelay:(double)arg2
 
 %end
 
+   
 
-%ctor {
-  CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(), NULL, (CFNotificationCallback)initPrefs, CFSTR("com.pknauf.nsasettings/settingschanged"), NULL, CFNotificationSuspensionBehaviorCoalesce);
-      initPrefs();
-}
