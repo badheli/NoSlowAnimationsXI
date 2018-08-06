@@ -9,18 +9,30 @@
 			<string>PSGroupCell</string>
 		</dict>
 		<dict>
-			<key>PostNotification</key>
-			<string>com.pknauf.nsa/settingschanged</string>
 			<key>cell</key>
 			<string>PSSwitchCell</string>
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>com.pknauf.nsa</string>
+			<string>com.pknauf.nsasettings</string>
 			<key>key</key>
 			<string>SCisEnabled</string>
 			<key>label</key>
 			<string>Enabled</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Respring to apply changes</string>
+		</dict>
+		<dict>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>action</key>
+			<string>respring</string>
+			<key>label</key>
+			<string>Respring</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -33,12 +45,10 @@
 			<string>Speed</string>
 		</dict>
 		<dict>
-			<key>PostNotification</key>
-			<string>com.pknauf.nsa/settingschanged</string>
 			<key>cell</key>
 			<string>PSSliderCell</string>
 			<key>defaults</key>
-			<string>com.pknauf.nsa</string>
+			<string>com.pknauf.nsasettings</string>
 			<key>key</key>
 			<string>Slider</string>
 			<key>max</key>
@@ -48,35 +58,37 @@
 			<key>showValue</key>
 			<true/>
 		</dict>
-		<dict>
-			<key>cell</key>
-			<string>PSButtonCell</string>
-			<key>action</key>
-			<string>respring</string>
-			<key>label</key>
-			<string>Respring</string>
-		</dict>
     <dict>
       <key>cell</key>
       <string>PSGroupCell</string>
       <key>footerText</key>
-      <string>Volume and Ringtone HUD</string>
+      <string>Or other Volume HUD tweaks</string>
       <key>label</key>
       <string>Options</string>
     </dict>
     <dict>
-      <key>PostNotification</key>
-      <string>com.pknauf.nsa/settingschanged</string>
       <key>cell</key>
       <string>PSSwitchCell</string>
       <key>default</key>
       <true/>
       <key>defaults</key>
-      <string>com.pknauf.nsa</string>
+      <string>com.pknauf.nsasettings</string>
       <key>key</key>
       <string>applyOnHUD</string>
       <key>label</key>
       <string>Speed up HUDs</string>
+    </dict>
+    <dict>
+      <key>cell</key>
+      <string>PSSwitchCell</string>
+      <key>default</key>
+      <false/>
+      <key>defaults</key>
+      <string>com.pknauf.nsasettings</string>
+      <key>key</key>
+      <string>aerify</string>
+      <key>label</key>
+      <string>Aerify mode</string>
     </dict>
 		<dict>
 			<key>cell</key>
