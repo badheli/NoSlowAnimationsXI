@@ -17,45 +17,20 @@
 #import <Preferences/PSTableCell.h> 
 
 
-#define NSAPreferencePath @"/var/mobile/Library/Preferences/com.pknauf.nsasettings.plist"
-
-@interface nsasettingsListController : PSListController {
-}
-@end
+#include "nsasettingsListController.h"
 
 @implementation nsasettingsListController
 
-- (id)specifiers {
-    if(_specifiers == nil) {
-            _specifiers = [[self loadSpecifiersFromPlistname:@"Root" target:self] retain];
-        }
-        return _specifiers;
-        
-  }
-  
-  -(id) bundle {
-      return [NSBundle bundleForClass:[self class]];
+-(NSArray *)specifiers {
+	if (!_specifiers) {
+		_specifiers = [[self loadSpecifiersFromPlistname:@"Root" target:self] retain];
+	}
+	
+	return _specifiers;
 }
 
--(id) readPreferenceValue:(PSSpecifier*)specifier {
-    NSDictionary *nsasettings = [NSDictionary dictionaryWithContentsOfFile:NSAPreferencePath];
-    if (!nsasettings[specifier.properties[@"key"]]) {
-        return specifier.properties[@"default"];
-    }
-    return nsasettings[specifier.properties[@"key"]];
-    
-}
-
--(void) setPreferenceValue:(id)value specifier:(PSSpecifier*)specifier {
-    NSMutableDictionary *defaults = [NSMutableDictionary dictionary];
-    [defaults setObject:value forKey:specifier.properties[@"key"]];
-    [defaults writeToFile:NSAPreferencePath atomically:YES];
-    CFStringref NSAPost =(CFStringRef)specifier.properties[@"PostNoticiation"];
-    
-CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), NSAPost, NULL, NULL, YES);
-}
   
-  -(void) respring:(id)arg1 {
+-(void) respring:(id)arg1 {
            system ("killall -9 backboardd");
 }
 
