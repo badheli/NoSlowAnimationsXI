@@ -66,7 +66,7 @@ const double minimumHudSpeed = 0.15;
 
 -(void)presentHUDView:(id)arg1 autoDismissWithDelay:(double)arg2 {
     if ([SCisEnabled isEqual:@1]) {
-        if ([applyOnHUD isEqual:@"1"]) {
+        if ([applyOnHUD isEqual:@1]) {
             if(SliderFloat < minimumHudSpeed) {
                 %orig(arg1, arg2 * minimumHudSpeed);
             }else{
