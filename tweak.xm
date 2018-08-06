@@ -87,7 +87,7 @@ const double minimumHudSpeed = 0.15;
 %end
 
 
-%hook SBFluidBehaviorSettings
+%hook SBFluidBehaviorSettings      //Faster app opening/closing animations
 
 -(void)setResponse:(double)arg1 {
     if ([SCisEnabled isEqual:@1]) {
