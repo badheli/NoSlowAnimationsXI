@@ -23,7 +23,9 @@ double SliderFloat = [Slider floatValue];
 const double minimumHudSpeed = 0.15;
 
 
-%hook SBAnimationFactorySetings {
+%hook SBAnimationFactorySetings //Fatser various animations
+
+-(BOOL)slowAnimations {
     if ([SCisEnabled isEqual:@1]) {
 
         return NO;
@@ -43,7 +45,7 @@ const double minimumHudSpeed = 0.15;
 %end 
 
 
-%hook SBScreenWakeAnimationController
+%hook SBScreenWakeAnimationController    //Faster time for the screen to turn on
 -(void)backlightFadeDuration:(double)arg1 {
     if ([SCisEnabled isEqual:@1]) {
         if (SliderFloat <= 0.30) {
@@ -62,20 +64,24 @@ const double minimumHudSpeed = 0.15;
 
 %end
 
-%hook SBHudController
+%hook SBHudController  //faster HUD
 
 -(void)presentHUDView:(id)arg1 autoDismissWithDelay:(double)arg2 {
-    if ([SCisEnabled isEqual:@1]) {
-        if ([applyOnHUD isEqual:@1]) {
-            if(SliderFloat < minimumHudSpeed) {
-                %orig(arg1, arg2 * minimumHudSpeed);
-            }else{
-                %orig(arg1, arg2 *SliderFloat);
-            }
+    if ([aerify isEqual:@1]) {         //aerify + NoSlowAnimationsXI causes HUD to not show up
+        %orig;
         }else{
-            %orig(arg1, arg2);
-        }
-    }
+            if ([SCisEnabled isEqual:@1]) {
+                if ([applyOnHUD isEqual:@1]) {
+                    if(SliderFloat < minimumHudSpeed) {
+                       %orig(arg1, arg2 * minimumHudSpeed);
+                    }else{
+                        %orig(arg1, arg2 *SliderFloat);
+                    }
+                }else{
+                    %orig(arg1, arg2);
+               }
+            }
+       }
 }
 
 %end
@@ -85,16 +91,19 @@ const double minimumHudSpeed = 0.15;
 
 -(void)setResponse:(double)arg1 {
     if ([SCisEnabled isEqual:@1]) {
-        %orig(SliderFloat);
+        if ([Slider isEqual:@0.0]) {
+            %orig(0.0000000001);      //Prevent freezing; 0.0 causes freezing
+        }else{
+            %orig(SliderFloat);
     }else{
-        return %orig;
-    }
+            return %orig;
+        }
 }
 
 %end
 
 
-%hook SBappSwitcherorbGestureAnimationSettings
+%hook SBAppSwitcherorbGestureAnimationSettings    //faster 3D touch on the edge of the display to switch apps.
 
 -(void)setResponse:(double)arg1 {
     if ([SCisEnabled isEqual:@1]) {
@@ -105,6 +114,3 @@ const double minimumHudSpeed = 0.15;
 }
 
 %end
-
-   
-
