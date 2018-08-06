@@ -23,7 +23,7 @@ double SliderFloat = [Slider floatValue];
 const double minimumHudSpeed = 0.15;
 
 
-%hook SBAnimationFactorySetings //Fatser various animations
+%hook SBAnimationFactorySetings //Faster various animations
 
 -(BOOL)slowAnimations {
     if ([SCisEnabled isEqual:@1]) {
