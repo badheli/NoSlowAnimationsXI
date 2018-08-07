@@ -2,14 +2,13 @@
 //
 //Created by Patrick Knauf on 7/9/18
 //
-//I AM NOT THE ORIGINAL CREATOR OF NO SLOW ANIMATIONS, I HAVE FORKED IT TO WORK WITH iOS 11
-//
 //Features:
 //Sped up animations:
 //App opening/closing, lock/unlock, app switcher, control center, notification banners, 3D touch
 //
 //original author of NoSlowAnimations is Marco Singhof
 //
+//I am not the original author of NoSlowAnimations. I have updated it to work with newer versions of iOS. Original author is Marco Singhof.
 
 #import <UIKit/UIKit.h>
 
