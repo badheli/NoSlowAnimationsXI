@@ -16,6 +16,7 @@ NSDictionary *bundle = [[NSUserDefaults standardUserDefaults] persistentDomainFo
 
 id SCisEnabled = [bundle valueForKey:@"SCisEnabled"];
 id applyOnHUD = [bundle valueForKey:@"applyOnHUD"];
+id aerify = [bundle valueForKey:@"aerify"];
 id Slider = [bundle valueForKey@"Slider"];
 double SliderFloat = [Slider floatValue];
 
