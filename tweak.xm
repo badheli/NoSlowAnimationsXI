@@ -1,4 +1,4 @@
-//NoSlowAnimationsXI Beta 4.1
+//NoSlowAnimationsXI Version 5.1.1
 //
 //Created by Patrick Knauf on 7/9/18
 //
