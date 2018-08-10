@@ -66,7 +66,7 @@ const double minimumHudSpeed = 0.15;
 %hook SBHudController  //faster HUD
 
 -(void)presentHUDView:(id)arg1 autoDismissWithDelay:(double)arg2 {
-    if ([aerify isEqual:@1]) {         //aerify + NoSlowAnimationsXI causes HUD to not show up
+    if ([aerify isEqual:@1]) {         //aerify mode: aerify + NoSlowAnimationsXI causes HUD to not show up
         %orig;
         }else{
             if ([SCisEnabled isEqual:@1]) {
