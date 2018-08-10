@@ -6,7 +6,6 @@
 //Sped up animations:
 //App opening/closing, lock/unlock, app switcher, control center, notification banners, 3D touch
 //
-//original author of NoSlowAnimations is Marco Singhof
 //
 //I am not the original author of NoSlowAnimations. I have updated it to work with newer versions of iOS. Original author is Marco Singhof.
 
