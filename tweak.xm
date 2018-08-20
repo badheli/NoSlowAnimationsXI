@@ -1,4 +1,5 @@
 //NoSlowAnimationsXI Version 5.1.1
+//Compatible iOS versions: 11.0-11.4 beta 3
 //
 //Created by Patrick Knauf on 7/9/18
 //
@@ -16,7 +17,7 @@ NSDictionary *bundle = [[NSUserDefaults standardUserDefaults] persistentDomainFo
 id SCisEnabled = [bundle valueForKey:@"SCisEnabled"];
 id applyOnHUD = [bundle valueForKey:@"applyOnHUD"];
 id aerify = [bundle valueForKey:@"aerify"];
-id Slider = [bundle valueForKey@"Slider"];
+id Slider = [bundle valueForKey:@"Slider"];
 double SliderFloat = [Slider floatValue];
 
 const double minimumHudSpeed = 0.15;
