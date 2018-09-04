@@ -103,7 +103,7 @@ const double minimumHudSpeed = 0.15;
 %end
 
 
-%hook SBAppSwitcherorbGestureAnimationSettings    //faster 3D touch on the edge of the display to switch apps.
+%hook SBAppSwitcherOrbGestureAnimationSettings    //faster 3D touch on the edge of the display to switch apps.
 
 -(void)setResponse:(double)arg1 {
     if ([SCisEnabled isEqual:@1]) {
