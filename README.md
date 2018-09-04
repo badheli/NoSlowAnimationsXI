@@ -5,7 +5,7 @@ The once popular NoSlowAnimations, forked to be compatible with iOS 11.0-11.4 be
 
 ### Requirements:
 1. A jailbroken iOS 11 iPhone, iPad, or iPod Touch, that includes an APT package manager (command line or a GUI will work ie: Cydia, aptitude)
-2. Install Patrick Knauf's (me) repo: if you already have the repo added you can skip to usage
+2. Install Patrick Knauf's (me) repo: if you already have the repo added you can skip to step 3.
 
 If you are using cydia; go to sources, tap "edit" then tap "add" then enter in: https://patrick-knauf.github.io/repo
 
