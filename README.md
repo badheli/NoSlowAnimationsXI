@@ -25,10 +25,10 @@ https://patrick-knauf.github.io/repo/ ./
 
 If you are using aptitude: 
 
-apt-get install com.yourepo.patrick-knauf.noslowanimationsxibeta
+apt-get install com.yourepo.pknauf.nsa
 
 If you are using Cydia: 
-Go to the search page, then search for "NoSlowAnimationsXI". Click on it, then in the top right corner of the screen click install. When cydia is finished installing the package, respring yur device witht the button that will appear.
+Go to the search page, then search for "NoSlowAnimationsXI". Click on it, then in the top right corner of the screen click install. When cydia is finished installing the package, respring your device with the button that will appear.
 
 ## Usage
 
