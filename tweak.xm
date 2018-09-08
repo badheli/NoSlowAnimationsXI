@@ -92,7 +92,7 @@ const double minimumHudSpeed = 0.15;
 -(void)setResponse:(double)arg1 {
     if ([SCisEnabled isEqual:@1]) {
         if ([Slider isEqual:@0.0]) {
-            %orig(0.0000000001);      //Prevent freezing; 0.0 causes freezing
+            %orig(0.000001);      //Prevent freezing; a value lower than 0.000001 causes freezing on some devices.
         }else{
             %orig(SliderFloat);
     }else{
