@@ -34,6 +34,14 @@
            system ("killall -9 backboardd");
 }
 
+-(void)idhtwitter:(id)arg1 {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://twitter.com/idevice_hacked"]];
+}
+
+-(void)discord {
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://discord.gg/7zSxr8T"]];
+}
+
 -(void) twitter:(id)arg1 {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com/patrickk1734"]];
 }
