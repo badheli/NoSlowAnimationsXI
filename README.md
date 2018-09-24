@@ -11,7 +11,7 @@ If you are using cydia; go to sources, tap "edit" then tap "add" then enter in: 
 Or you can go to https://patrick-knauf.github.io/repo and tap the "add to cydia" button on your iPhone.
 
 If you are using APT from the command line, edit the file /etc/apt/sources.list.d/cydia.list and add the line:
-    deb https://patrick-knauf.github.io/repo
+    `deb https://patrick-knauf.github.io/repo`
 
 
 3. Install the package.
