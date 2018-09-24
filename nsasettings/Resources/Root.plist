@@ -135,6 +135,33 @@
       <string>github</string>
 		</dict>
 		<dict>
+			<key>cell</key<
+			<string>PSGroupCell</string>
+			<key>footerText</key>
+			<string>Come Chat with us!</string>
+			<key>label</key>
+			<string>iDeviceHacked</string>
+		</dict>
+		<dict>
+			<key>action>/key>
+			<string>idhtwitter:</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>icon</key>
+			<string>twitter.png</string>
+			<key>label</key>
+			<string>iDeviceHacked on Twitter</string>
+		</dict>
+		<dict>
+			<key>action</key>
+			<string>discord</string>
+			<key>cell</key>
+			<string>PSButtonCell</string>
+			<key>icon</key>
+			<string>discord.png</string>
+			<key>label</key>
+			<string>Discord Server</string>
+		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
 			<key>footerText</key>
