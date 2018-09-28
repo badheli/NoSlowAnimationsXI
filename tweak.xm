@@ -35,7 +35,7 @@ const double minimumHudSpeed = 0.15;
 }
 
 -(double)slowDownFactor {
-    if ([SCisEnabled isEqual:@"1"]) {
+    if ([SCisEnabled isEqual:@1]) {
         return SliderFloat;
     }else{
         return %orig();
