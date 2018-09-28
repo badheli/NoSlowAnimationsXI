@@ -19,7 +19,7 @@ If you are using APT from the command line, edit the file /etc/apt/sources.list.
 
 If you are using APT from the command line: 
 
-apt-get install com.pknauf.nsa
+    apt-get install com.pknauf.nsa
 
 If you are using Cydia: 
 Go to the search page, then search for "NoSlowAnimationsXI". Click on it, then in the top right corner of the screen click install. When cydia is finished installing the package, respring your device with the button that will appear.
