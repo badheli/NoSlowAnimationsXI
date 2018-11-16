@@ -1,7 +1,7 @@
 Package: com.pknauf.nsa
 Name: noslowanimationsxi
 Depends: mobilesubstrate
-Version: 4.0
+Version: 5.1.2
 Architecture: iphoneos-arm
 Description: Don't get slowed down by iOS 11 animations!
 Maintainer: Patrick Knauf
