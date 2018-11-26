@@ -29,5 +29,5 @@ Go to the search page, then search for "NoSlowAnimationsXI". Click on it, then i
 After you install NoSlowanimationsXI you can go to settings and scroll down then click on it's settings page. You can then adjust the speed to your liking, enable or disable it, choose to speed up the volume HUDs or not, or turn on aerify mode. If you change any of the switches or move the slider, you must click the respring button that is included for the changes to take effect. You can also click the mail button or twitter button to send me an issue. 
 
 
-NoSlowAnimationsXI 5.1.1 by Patrick Knauf
+NoSlowAnimationsXI 5.1.2 by Patrick Knauf
 
