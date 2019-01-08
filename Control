@@ -3,7 +3,7 @@ Name: noslowanimationsxi
 Depends: mobilesubstrate
 Version: 5.1.2
 Architecture: iphoneos-arm
-Description: Don't get slowed down by iOS 11 animations!
+Description: Don't get slowed down by animations on iOS 11!
 Maintainer: Patrick Knauf
 Author: Patrick Knauf
 Section: Tweaks
