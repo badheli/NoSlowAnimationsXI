@@ -1,14 +1,8 @@
-//NoSlowAnimationsXI Version 5.1.1
-//Compatible iOS versions: 11.0-11.4 beta 3
-//
-//Created by Patrick Knauf on 7/9/18
-//
-//Features:
-//Sped up animations:
-//App opening/closing, lock/unlock, app switcher, control center, notification banners, 3D touch
-//
-//
-//I am not the original author of NoSlowAnimations. I have updated it to work with newer versions of iOS. Original author is Marco Singhof.
+/*
+
+Copyright © 2018 Patrick Knauf
+
+*/
 
 #import <UIKit/UIKit.h>
 
